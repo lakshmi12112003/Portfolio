@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Photography Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .gallery {
+            text-align: center;
+        }
+
+        .gallery h2 {
+            color: #6a11cb;
+            margin-bottom: 20px;
+        }
+
+        .gallery-types {
+            margin-bottom: 20px;
+        }
+
+        .gallery-types button {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #6a11cb;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .gallery-types button:hover {
+            background-color: #2575fc;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 0 auto;
+            max-width: 1200px;
+            display: none; /* Hide initially */
+        }
+
+        .gallery-grid.active {
+            display: grid; /* Show the active grid */
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="gallery">
+            <h2>My Work</h2>
+            <div class="gallery-types">
+                <button onclick="showGallery('landscape')">Landscapes</button>
+                <button onclick="showGallery('portrait')">Portraits</button>
+                <button onclick="showGallery('wedding')">Weddings</button>
+                <button onclick="showGallery('street')">Street</button>
+            </div>
+            <div id="landscape" class="gallery-grid">
+                <img src="https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&dl=clouds-country-daylight-371633.jpg&fm=jpg" alt="Landscape Photo 1">
+                <img src="http://thewowstyle.com/wp-content/uploads/2015/02/now-i-am-free.jpg" alt="Landscape Photo 2">
+                <img src="https://s2.best-wallpaper.net/wallpaper/1920x1200/1112/Beautiful-landscape-photography_1920x1200.jpg" alt="Landscape Photo 3">
+                <img src="https://petapixel.com/assets/uploads/2022/06/what-is-landscape-photography-1536x806.jpg" alt="Landscape Photo 4">
+                <img src="http://2.bp.blogspot.com/-1AJQvQMFkFI/UcFG7W2ueoI/AAAAAAAAKIU/KATWq9kbiw8/s1600/landscape-wallpapers-15.jpg" alt="Landscape Photo 5">
+                <img src="https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg" alt="Landscape Photo 6">
+                <img src="http://photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg" alt="Landscape Photo 7">
+            </div>
+            <div id="portrait" class="gallery-grid">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.KkBVZO_z7d40vyTKO_kYigHaJQ&pid=Api&P=0&h=180" alt="Portrait Photo 1">
+                <img src="https://blog.hahnemuehle.com/en/wp-content/uploads/sites/12/2015/07/Benedict-Cumberbatch-C-Mark-Mann.jpg" alt="Portrait Photo 2">
+                <img src="https://i.pinimg.com/originals/be/26/18/be2618b3ff2960305bde0315c59f908f.jpg" alt="Portrait Photo 3">
+                <img src="https://i.pinimg.com/originals/f8/6b/6e/f86b6e67c998af98e06121d403f9e2c2.jpg" alt="Portrait Photo 4">
+                <img src="https://c1.staticflickr.com/1/156/30768455713_0504298abb_b.jpg" alt="Portrait Photo 5">
+                <img src="https://i.pinimg.com/736x/c3/66/50/c36650d3874de5f32562f96a7e25581e.jpg" alt="Portrait Photo 6">
+                <img src="https://i.pinimg.com/originals/06/40/70/064070ca0baeb68dc5f3e3401029f8d7.png" alt="Portrait Photo 7">
+            </div>
+            <div id="wedding" class="gallery-grid">
+                <img src="https://www.shaadidukaan.com/vogue/wp-content/uploads/2019/10/Wedding-Photography-Poses.jpg" alt="Wedding Photo 1">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.ELxO_2pz8O-4-zrSq1f8jgHaE7&pid=Api&P=0&h=180" alt="Wedding Photo 2">
+                <img src="https://2.bp.blogspot.com/-e-R8aJMg-PM/UbirGNBV2hI/AAAAAAAAAME/i8PNYAcjUBQ/s1600/Neidig-Vajen-1027R.jpg" alt="Wedding Photo 3">
+                <img src="https://www.yabeshphotography.com/wp-content/uploads/2023/06/A-couple-posing-for-their-wedding-photo-with-the-2023-photography-trend-of-environmental-portraits.jpg" alt="Wedding Photo 4">
+                <img src="http://josephkingphotography.in/wp-content/uploads/2022/08/Best-wedding-Photographer-Indore-Joseph-King-Photography3.jpg" alt="Wedding Photo 5">
+                <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2020/11/Inside-image-Wedding-Photographers6.jpg" alt="Wedding Photo 6">
+                <img src="https://www.wedding-photographer-denmark.com/wp-content/gallery/wedding-pictures/wedding-photographer-denmark-108.jpg" alt="Wedding Photo 7">
+            </div>
+            <div id="street" class="gallery-grid">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.TLXUlt-FsbcTOdCo9GvkoAHaE7&pid=Api&P=0&h=180" alt="Street Photo 1">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.vNIfecI-OpTdKxyUsphJygHaE8&pid=Api&P=0&h=180" alt="Street Photo 2">
+                <img src="https://wallpaperaccess.com/full/1210681.jpg" alt="Street Photo 3">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.WXbF56mVnozuYI1CPkcTDAHaE8&pid=Api&P=0&h=180" alt="Street Photo 4">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.TQIapebA9_GLH6do10eueQHaE8&pid=Api&P=0&h=180" alt="Street Photo 5">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.Ekvp1AclWvffuOwoir9odgHaEK&pid=Api&P=0&h=180" alt="Street Photo 6">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.QfVAIoSF5gMO2aoEJ5w0egHaE8&pid=Api&P=0&h=180" alt="Street Photo 7">
+                <img src="https://images.squarespace-cdn.com/content/v1/53a2b3a1e4b0a5020bebe676/1466070960828-EF3FNWF2IGE4B2FKFKGU/street-photography-tips-01.jpg" alt="Street Photo 8">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Photography Portfolio</p>
+    </footer>
+
+    <script>
+        function showGallery(type) {
+            // Hide all galleries
+            const galleries = document.querySelectorAll('.gallery-grid');
+            galleries.forEach(gallery => {
+                gallery.classList.remove('active');
+            });
+
+            // Show the selected gallery
+            document.getElementById(type).classList.add('active');
+        }
+
+        // Show the landscape gallery by default
+        window.onload = function() {
+            showGallery('landscape');
+        };
+    </script>
+</body>
+</html>
